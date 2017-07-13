@@ -1,0 +1,36 @@
+body {
+	background: #6441a5;
+	color: #fff;
+}
+
+h1 {
+	text-align: center;
+}
+
+
+button:hover {
+	cursor: pointer;
+	background: #eee;
+}
+
+.twitch-btn {
+	padding-top: 30px;
+	text-align: center;
+}
+
+.twitch {
+	max-width: 960px;
+	margin: 0 auto;	
+}
+
+tbody tr:hover {
+	color: #6441a5;
+}
+
+/*span {
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	border-radius: 100%;
+	background: #f00;
+}*/
