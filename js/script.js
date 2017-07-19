@@ -1,6 +1,6 @@
 $(function(){
 
-	var streamers = ["lirik", "freecodecamp", "pokket", "kindafunnygames", "DansGaming"]
+	var streamers = ["lirik", "freecodecamp", "pokket", "kindafunnygames", "GoldGlove", "DansGaming"]
 
 	function checkStream(){
 
