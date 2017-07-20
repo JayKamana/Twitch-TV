@@ -48,6 +48,60 @@ $(function(){
 		checkStream();
 	})
 
+	$('.all').on('click', function(){
+	  $('li').removeClass('active')
+	  var table, tr, i;
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+
+	  for (i = 0; i < tr.length; i++) {
+	        tr[i].style.display = "";	      
+	    }
+	    $(this).addClass('active')
+	})
+
+	$('.online').on('click', function(){
+		$('li').removeClass('active')
+	  var input, filter, table, tr, td, i;
+	  
+	  filter = 'Online';
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+
+	  for (i = 0; i < tr.length; i++) {
+	    td = tr[i].getElementsByTagName("td")[1];
+	    if (td) {
+	      if (td.innerHTML.indexOf(filter) > -1) {
+	        tr[i].style.display = "";
+	      } else {
+	        tr[i].style.display = "none";
+	      }
+	    } 
+	}
+	$(this).addClass('active')
+	})
+
+	$('.offline').on('click', function(){
+		$('li').removeClass('active')
+	  var input, filter, table, tr, td, i;
+	  
+	  filter = 'Offline';
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+
+	  for (i = 0; i < tr.length; i++) {
+	    td = tr[i].getElementsByTagName("td")[1];
+	    if (td) {
+	      if (td.innerHTML.indexOf(filter) > -1) {
+	        tr[i].style.display = "";
+	      } else {
+	        tr[i].style.display = "none";
+	      }
+	    } 
+	}
+	$(this).addClass('active')
+	})
+
 	checkStream();
  })
 

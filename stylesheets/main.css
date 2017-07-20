@@ -62,3 +62,13 @@ input {
   border-radius: 13px 13px 13px 13px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
 }
+
+.nav-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+#myInput {
+  width: 300px;
+}
