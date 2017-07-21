@@ -3,8 +3,9 @@ body {
 	color: #fff;
 }
 
-h1 {
+.hero {
 	text-align: center;
+  text-transform: uppercase;
 }
 
 
@@ -22,6 +23,9 @@ button:hover {
 	max-width: 960px;
 	margin: 0 auto;	
 }
+table:hover {
+  cursor: pointer;
+}
 
 tbody tr:hover,
 tbody tr:hover a{
@@ -32,10 +36,15 @@ a {
 	color: #fff;
 }
 
-.stream-logo {
+.stream-logo{
 	height: 50px;
     display: inline-block;
     margin-right: 10px;
+}
+
+.logo {
+  height: 100px;
+  margin: 20px auto;
 }
 
 .table>tbody>tr>td,.live,
@@ -67,8 +76,19 @@ input {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 #myInput {
   width: 300px;
 }
+
+td:last-of-type,
+th:last-of-type {
+  text-align: center;
+}
+
+thead tr{
+  text-transform: uppercase;
+}
+
