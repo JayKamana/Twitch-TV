@@ -44,7 +44,7 @@ a {
 
 .logo {
   height: 100px;
-  margin: 20px auto;
+  margin: 20px auto 60px auto;
 }
 
 .table>tbody>tr>td,.live,
@@ -92,3 +92,8 @@ thead tr{
   text-transform: uppercase;
 }
 
+.status {
+  display: inline-block;
+  height: 12px;
+  margin-right: 10px;
+}
