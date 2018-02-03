@@ -9,6 +9,8 @@ $(function() {
     "DansGaming"
   ];
 
+//https://wind-bow.glitch.me/twitch-api/channels/lirik
+
   function checkStream() {
     streamers.forEach(function(streamer) {
       fetch(
@@ -49,7 +51,7 @@ $(function() {
   $(".all").on("click", function() {
     $("li").removeClass("active");
     var table, tr, i;
-    table = document.getElementById("myTable");
+    table = document.getElementById("stream");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -63,7 +65,7 @@ $(function() {
     var input, filter, table, tr, td, i;
 
     filter = "Online";
-    table = document.getElementById("myTable");
+    table = document.getElementById("stream");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -84,7 +86,7 @@ $(function() {
     var input, filter, table, tr, td, i;
 
     filter = "Offline";
-    table = document.getElementById("myTable");
+    table = document.getElementById("stream");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {
@@ -100,11 +102,11 @@ $(function() {
     $(this).addClass("active");
   });
 
-  $("#myInput").on("keyup", function() {
+  $("#search-input").on("keyup", function() {
     var input, filter, table, tr, td, i;
-    input = document.getElementById("myInput");
+    input = document.getElementById("search-input");
     filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
+    table = document.getElementById("stream");
     tr = table.getElementsByTagName("tr");
 
     for (i = 0; i < tr.length; i++) {

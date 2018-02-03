@@ -8,7 +8,6 @@ body {
   text-transform: uppercase;
 }
 
-
 button:hover {
 	cursor: pointer;
 	background: #eee;
@@ -56,31 +55,29 @@ a {
 	padding-left: 8px;
 }
 
-input {
-  color: #6441a5;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 20px;
-  display: block;
-  width: 163px;
-  height: 14px;
-  padding: 6px 27px 6px 12px;
-  cursor: pointer;
-  background-color: rgb(204, 204, 204);
-  border: none;
-  border-radius: 13px 13px 13px 13px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2) inset;
-}
 
 .nav-wrapper {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 30px;
 }
 
-#myInput {
-  width: 300px;
+.search {
+  width: 50%;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 900px){
+  .search {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .search {
+    width: 90%;
+  }
 }
 
 td:last-of-type,
