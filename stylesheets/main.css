@@ -13,9 +13,6 @@ button:hover {
 	background: #eee;
 }
 
-table:hover {
-  cursor: pointer;
-}
 
 tbody tr:hover,
 tbody tr:hover a{
@@ -34,7 +31,7 @@ a {
 
 .logo {
   height: 100px;
-  margin: 20px auto 60px auto;
+  margin: 20px auto 40px auto;
 }
 
 .table>tbody>tr>td,.live,
