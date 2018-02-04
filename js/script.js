@@ -26,7 +26,7 @@ $(function() {
       .then(function(data) {
 
           $("." + streamer).html(
-            '<img class="img-responsive img-circle stream-logo" src="'+data.logo+'"/><a href="http://twitch.tv/"'+streamer+'">"'+streamer+'"</a>'
+            '<img class="img-responsive img-circle stream-logo" src="'+data.logo+'"/><a href="http://twitch.tv/"'+streamer+'">'+streamer+'</a>'
           );
 
 
@@ -38,8 +38,9 @@ $(function() {
     
     streamers.forEach(function(streamer) {
       fetch(
-        "https://wind-bow.glitch.me/twitch-api/streams/" +
-          streamer
+        "https://api.twitch.tv/kraken/streams/" +
+        streamer +
+        "?client_id=4told1vdrf3s0axfrd86lig9c4dawc"
       )
         .then(checkStatus)
         .then(getJSON)
