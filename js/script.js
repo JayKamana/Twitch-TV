@@ -6,13 +6,17 @@ $(function() {
     "ESL_SC2",
     "kindafunnygames",
     "GoldGlove",
-    "DansGaming"
+    "DansGaming",
+    "sacriel"
   ];
 
 
   function checkStream() {
 
     streamers.forEach(function(streamer) {
+
+      $('.stream-details').append('<tr><td class="'+streamer+'"></td><td class="status"></td><td class="game"></td></tr>');
+
       fetch(
         "https://wind-bow.glitch.me/twitch-api/channels/" +
           streamer
@@ -140,9 +144,6 @@ $(function() {
     }
   });
 
-  $(".twitch-btn").on("click", function() {
-    checkStream();
-  });
   
   checkStream();
 });
