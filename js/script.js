@@ -9,25 +9,44 @@ $(function() {
     "DansGaming"
   ];
 
-//https://wind-bow.glitch.me/twitch-api/channels/lirik
 
   function checkStream() {
+
     streamers.forEach(function(streamer) {
       fetch(
-        "https://api.twitch.tv/kraken/streams/" +
-          streamer +
-          "?client_id=4told1vdrf3s0axfrd86lig9c4dawc"
+        "https://wind-bow.glitch.me/twitch-api/channels/" +
+          streamer
+      )
+      .then(checkStatus)
+      .then(getJSON)
+      .then(function(data) {
+
+          $("." + streamer).html(
+            '<img class="img-responsive img-circle stream-logo" src="'+data.logo+'"/><a href="http://twitch.tv/"'+streamer+'">"'+streamer+'"</a>'
+          );
+
+
+      })
+      .catch(function(err) {
+        console.log("ERROR", err);
+      });
+  });
+    
+    streamers.forEach(function(streamer) {
+      fetch(
+        "https://wind-bow.glitch.me/twitch-api/streams/" +
+          streamer
       )
         .then(checkStatus)
         .then(getJSON)
         .then(function(data) {
           if (data.stream != null) {
-            $("." + streamer + " + .live").html(
-              '<img class="img-responsive status" src="img/online.png" alt="Stream online">Online'
+            $("." + streamer + " + .status").html(
+              '<img class="img-responsive status-icon" src="img/online.png" alt="Stream online">Online'
             );
             $("." + streamer + " ~ .game").html(data.stream.game);
           } else {
-            $("." + streamer + " + .live").html("Offline");
+            $("." + streamer + " + .status").html("Offline");
           }
         })
         .catch(function(err) {

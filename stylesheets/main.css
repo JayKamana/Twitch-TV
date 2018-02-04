@@ -89,7 +89,7 @@ thead tr{
   text-transform: uppercase;
 }
 
-.status {
+.status-icon {
   display: inline-block;
   height: 12px;
   margin-right: 10px;
