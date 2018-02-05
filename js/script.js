@@ -1,53 +1,54 @@
 $(function() {
   var streamers = [
     "lirik",
+    "sacriel",
     "freecodecamp",
     "pokket",
     "ESL_SC2",
     "kindafunnygames",
     "GoldGlove",
-    "DansGaming",
-    "sacriel"
+    "DansGaming"
   ];
 
-
   function checkStream() {
-
     streamers.forEach(function(streamer) {
+      $(".stream-details").append(
+        '<tr><td class="' +
+          streamer +
+          '"></td><td class="status"></td><td class="game"></td></tr>'
+      );
 
-      $('.stream-details').append('<tr><td class="'+streamer+'"></td><td class="status"></td><td class="game"></td></tr>');
-
-      fetch(
-        "https://wind-bow.glitch.me/twitch-api/channels/" +
-          streamer
-      )
-      .then(checkStatus)
-      .then(getJSON)
-      .then(function(data) {
-
+      fetch("https://wind-bow.glitch.me/twitch-api/channels/" + streamer)
+        .then(checkStatus)
+        .then(getJSON)
+        .then(function(data) {
           $("." + streamer).html(
-            '<img class="img-responsive img-circle stream-logo" src="'+data.logo+'"/><a href="http://twitch.tv/"'+streamer+'">'+streamer+'</a>'
+            '<img class="img-responsive img-circle stream-logo" src="' +
+              data.logo +
+              '"/><a href="http://twitch.tv/' +
+              streamer +
+              '">' +
+              streamer +
+              "</a>"
           );
+        })
+        .catch(function(err) {
+          console.log("ERROR", err);
+        });
+    });
 
-
-      })
-      .catch(function(err) {
-        console.log("ERROR", err);
-      });
-  });
-    
     streamers.forEach(function(streamer) {
       fetch(
         "https://api.twitch.tv/kraken/streams/" +
-        streamer +
-        "?client_id=4told1vdrf3s0axfrd86lig9c4dawc"
+          streamer +
+          "?client_id=4told1vdrf3s0axfrd86lig9c4dawc"
       )
         .then(checkStatus)
         .then(getJSON)
         .then(function(data) {
           if (data.stream != null) {
             $("." + streamer + " + .status").html(
-              '<img class="img-responsive status-icon" src="img/online.png" alt="Stream online">Online'
+              '<div style="display: flex; align-items: center"><span style="display: inline-block; width: 12px; height: 12px; background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); border-radius: 50%; margin-right: 10px;"></span><span>Online</span></div>'
             );
             $("." + streamer + " ~ .game").html(data.stream.game);
           } else {
@@ -145,6 +146,5 @@ $(function() {
     }
   });
 
-  
   checkStream();
 });

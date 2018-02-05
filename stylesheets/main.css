@@ -3,16 +3,10 @@ body {
 	color: #fff;
 }
 
-.hero {
-	text-align: center;
-  text-transform: uppercase;
-}
-
 button:hover {
 	cursor: pointer;
 	background: #eee;
 }
-
 
 tbody tr:hover,
 tbody tr:hover a{
@@ -25,8 +19,8 @@ a {
 
 .stream-logo{
 	height: 50px;
-    display: inline-block;
-    margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .logo {
@@ -39,10 +33,6 @@ a {
 	vertical-align: middle;
 }
 
-.navbar-form {
-	padding-left: 8px;
-}
-
 
 .nav-wrapper {
   display: flex;
@@ -53,7 +43,7 @@ a {
 
 .search {
   width: 50%;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 @media only screen and (max-width: 900px){
@@ -75,10 +65,4 @@ th:last-of-type {
 
 thead tr{
   text-transform: uppercase;
-}
-
-.status-icon {
-  display: inline-block;
-  height: 12px;
-  margin-right: 10px;
 }
