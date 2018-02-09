@@ -25,7 +25,7 @@ $(function() {
           $("." + streamer).html(
             '<img class="img-responsive img-circle stream-logo" src="' +
               data.logo +
-              '"/><a href="http://twitch.tv/' +
+              '"/><a href="https://twitch.tv/' +
               streamer +
               '">' +
               streamer +
